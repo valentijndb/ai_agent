@@ -33,6 +33,11 @@ def main():
     if response.usage_metadata == None:
         raise RuntimeError("failed API request")
     
+    function_calls = response.function_calls
+    if len(function_calls) > 0:
+        for function_call in function_calls:
+            print(f"Calling function: {function_call.name}({function_call.args})")
+
     if args.verbose:    
         print(f"User prompt: {args.user_prompt}")
         print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
