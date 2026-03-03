@@ -10,14 +10,13 @@ schema_write_file = types.FunctionDeclaration(
             "file_path": types.Schema(
                 type=types.Type.STRING,
                 description="relative file_path of file",
-                required=["file_path"]
             ),
             "content": types.Schema(
                 type=types.Type.STRING,
                 description="content to be written",
-                required=["content"]
             )
         },
+        required=["file_path","content"]
     ),
 )
 

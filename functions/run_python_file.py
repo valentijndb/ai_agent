@@ -11,14 +11,14 @@ schema_run_python_file = types.FunctionDeclaration(
             "file_path": types.Schema(
                 type=types.Type.STRING,
                 description="relative file_path of file",
-                required=["file_path"]
             ),
             "args": types.Schema(
                 type=types.Type.ARRAY,
-                items= types.Type.STRING,
+                items=types.Schema(type=types.Type.STRING),
                 description="extra arguments like verbose",
             )
         },
+        required=["file_path"],
     ),
 )
 
